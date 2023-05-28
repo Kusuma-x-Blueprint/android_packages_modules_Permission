@@ -63,6 +63,7 @@ import com.android.permissioncontroller.permission.ui.model.v31.GrantPermissions
 import com.android.permissioncontroller.permission.ui.wear.GrantPermissionsWearViewHandler;
 import com.android.permissioncontroller.permission.utils.KotlinUtils;
 import com.android.permissioncontroller.permission.utils.Utils;
+import com.android.permissioncontroller.sscopes.StorageScopesUtils;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -529,6 +530,7 @@ public class GrantPermissionsActivity extends SettingsActivity
     }
 
 
+    public static final int REQ_CODE_SETUP_STORAGE_SCOPES = 100;
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -537,6 +539,10 @@ public class GrantPermissionsActivity extends SettingsActivity
         if (requestCode == APP_PERMISSION_REQUEST_CODE && callback != null) {
             callback.accept(data);
             mViewModel.setActivityResultCallback(null);
+        } else if (requestCode == REQ_CODE_SETUP_STORAGE_SCOPES) {
+            if (StorageScopesUtils.storageScopesEnabled(mTargetPackage)) {
+                setResultAndFinish();
+            }
         }
     }
 
