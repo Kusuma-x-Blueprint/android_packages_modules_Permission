@@ -56,6 +56,7 @@ import androidx.core.util.Consumer;
 import com.android.modules.utils.build.SdkLevel;
 import com.android.permissioncontroller.DeviceUtils;
 import com.android.permissioncontroller.R;
+import com.android.permissioncontroller.cscopes.ContactScopesUtils;
 import com.android.permissioncontroller.permission.ui.auto.GrantPermissionsAutoViewHandler;
 import com.android.permissioncontroller.permission.ui.model.v31.GrantPermissionsViewModel;
 import com.android.permissioncontroller.permission.ui.model.v31.GrantPermissionsViewModel.RequestInfo;
@@ -531,6 +532,8 @@ public class GrantPermissionsActivity extends SettingsActivity
 
 
     public static final int REQ_CODE_SETUP_STORAGE_SCOPES = 100;
+    public static final int REQ_CODE_SETUP_CONTACT_SCOPES = 101;
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -541,6 +544,10 @@ public class GrantPermissionsActivity extends SettingsActivity
             mViewModel.setActivityResultCallback(null);
         } else if (requestCode == REQ_CODE_SETUP_STORAGE_SCOPES) {
             if (StorageScopesUtils.storageScopesEnabled(mTargetPackage)) {
+                setResultAndFinish();
+            }
+        } else if (requestCode == REQ_CODE_SETUP_CONTACT_SCOPES) {
+            if (ContactScopesUtils.isContactScopesEnabled(mTargetPackage)) {
                 setResultAndFinish();
             }
         }
