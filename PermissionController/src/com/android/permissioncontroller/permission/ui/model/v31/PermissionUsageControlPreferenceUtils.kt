@@ -70,8 +70,7 @@ object PermissionUsageControlPreferenceUtils {
             if (count == 0) {
                 isEnabled = false
                 val permissionUsageSummaryNotUsed = if (
-                        groupName == Manifest.permission_group.NETWORK
-                        || groupName == Manifest.permission_group.OTHER_SENSORS)
+                        groupName == Manifest.permission_group.OTHER_SENSORS)
                 {
                     R.string.permission_usage_preference_summary_not_supported
                 } else {
