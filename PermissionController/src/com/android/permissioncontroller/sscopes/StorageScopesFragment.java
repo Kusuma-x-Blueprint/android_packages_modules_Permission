@@ -18,7 +18,6 @@ package com.android.permissioncontroller.sscopes;
 
 import android.app.Activity;
 import android.app.StorageScope;
-import android.app.compat.gms.GmsCompat;
 import android.content.ClipData;
 import android.content.ContentResolver;
 import android.content.Context;
@@ -186,8 +185,7 @@ public final class StorageScopesFragment extends PackageExtraConfigFragment {
     private void setEnabled(boolean enabled) {
         boolean killUid;
         if (enabled) {
-            // GMS often needs a restart to properly handle permission grants
-            killUid = GmsCompat.isGmsApp(pkgName, Process.myUserHandle().getIdentifier());
+            killUid = false;
 
             if (revokeStoragePermissions(context, pkgName)) {
                 getToastManager().showToast(R.string.sscopes_storage_permissions_revoked);
