@@ -1585,5 +1585,5 @@ Allow <xliff:g id="app_name" example="Gmail">%4$s</xliff:g> to upload a bug repo
     <string name="media_confirm_dialog_message_q_to_s_visual_deny">This app doesn\u2019t support the latest version of Android. If this app can\u2019t access music and audio files, it also won\u2019t be allowed to access photos and videos.</string>
 
     <!-- Summary text if tracking permission usage is not supported [CHAR LIMIT=60] -->
-    <string name="permission_usage_preference_summary_not_supported">Tracking usage not yet supported</string>
+    <string name="permission_usage_preference_summary_not_supported">Not supported</string>
 </resources>
