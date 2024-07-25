@@ -5,21 +5,16 @@
     android:layout_height="wrap_content"
     android:layout_marginTop="16dp"
     android:orientation="vertical"
+    android:background="?android:attr/selectableItemBackground"
     android:visibility="gone">
 
     <TextView
         android:id="@+id/app_permission_extra_link_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingStart="8dp"
-        android:paddingEnd="8dp"
-        android:paddingTop="16dp"
-        android:paddingBottom="16dp"
+        android:layout_marginTop="16dp"
         android:clickable="true"
-        android:focusable="true"
-        android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="?android:attr/textColorPrimary"
-        android:background="?android:attr/selectableItemBackground"
     />
 
 </LinearLayout>

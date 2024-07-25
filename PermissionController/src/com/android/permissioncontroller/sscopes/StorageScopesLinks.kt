@@ -35,7 +35,7 @@ object StorageScopesLinks : ExtraPermissionLink() {
     }
 
     override fun getSettingsLinkText(ctx: Context, packageName: String, packageState: GosPackageState?): CharSequence {
-        return ctx.getText(R.string.setup_stroage_scopes)
+        return ctx.getText(R.string.setup_storage_scopes)
     }
 
     override fun onSettingsLinkClick(fragment: AppPermissionFragment, packageName: String, packageState: GosPackageState?) {
